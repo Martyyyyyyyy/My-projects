@@ -28,7 +28,7 @@ export const scss = () => {
     ))
     .pipe(autoprefixer({
       grid: true,
-      overrideBrowserslist: ["last 3 versions"],
+      overrideBrowserslist: ["last 5 versions"],
       cascade: true
     }))
     // uncomment this if u need uncompressed duplicate of the style file
