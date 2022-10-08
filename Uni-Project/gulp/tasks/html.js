@@ -11,6 +11,31 @@ export const html = () => {
       }))
     )
     .pipe(fileInclude())
+    .pipe(
+      app.plugins.if(
+        app.isBuild,
+        webpHtmlNosvg()
+      )
+    )
+    .pipe(
+      app.plugins.if(
+        app.isBuild,
+        versionNumber({
+          'value': '%DT%',
+          'append': {
+            'key': '_v',
+            'cover': 0,
+            'to': [
+              'css',
+              'js'
+            ]
+          },
+          'output': {
+            'file': 'gulp/version.json'
+          }
+        })
+      )
+    )
     .pipe(webpHtmlNosvg())
     .pipe(
       versionNumber({

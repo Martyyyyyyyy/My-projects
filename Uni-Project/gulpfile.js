@@ -7,6 +7,8 @@ import { plugins } from "./gulp/config/plugins.js";
 
 // passing value into global variable
 global.app = {
+  isBuild: process.argv.includes('--build'),
+  isDev: !process.argv.includes('--build'),
   path: path,
   gulp: gulp,
   plugins: plugins
@@ -21,6 +23,7 @@ import { scss } from "./gulp/tasks/scss.js";
 import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
+import { ftp } from "./gulp/tasks/ftp.js";
 
 // watcher for changes in files
 function watcher() {
@@ -38,6 +41,13 @@ const mainTasks = gulp.parallel(copy, html, scss, js, images);
 
 // building scenario of comleting tasks
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
+const build = gulp.series(reset, mainTasks);
+const deployFTP = gulp.series(reset, mainTasks, ftp);
+
+// export scenarios
+export { dev }
+export { build }
+export { deployFTP }
 
 // completing default scenario
 gulp.task('default', dev); 

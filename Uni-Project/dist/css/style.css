@@ -1,10 +1,7 @@
-.no-webp body {
-  background: url("../image/medvedyk.jpg") 0 0 no-repeat; }
-
 body {
   background-color: lawngreen;
+  background: url("../image/medvedyk.jpg") 0 0 no-repeat;
 }
-
 body span {
   color: #F2F;
 }
@@ -13,10 +10,9 @@ body span {
   span {
     font-size: 20px;
   }
-
+}
+@media (max-width: 768px) {
   body {
     background-color: grey;
   }
 }
-
-.webp body { background: url(../image/medvedyk.webp) 0 0 no-repeat; }
