@@ -5,11 +5,15 @@
   })
   <body>
     @@include('html/header.html', {})
-    <main>
-      hello! 
-      <span>just testing!!!</span>
-    </main>
     @@include('html/footer.html', {})
     <script src="js/app.min.js"></script>
+    <div class="container-fluid">
+      <h1>3 different blocks</h1>
+      <div class="row"> 
+        <div class="col-md-2" style="background-color: red">Left</div>
+        <div class="col-md-2" style="background-color: orchid">Middle</div>
+        <div class="col-md-2" style="background-color: greenyellow">Right</div>
+      </div>
+    </div>
   </body>
 </html>
