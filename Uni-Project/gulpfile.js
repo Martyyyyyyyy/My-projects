@@ -23,6 +23,7 @@ import { js } from "./gulp/tasks/js.js";
 import { images } from "./gulp/tasks/images.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { ftp } from "./gulp/tasks/ftp.js";
+import { html } from "./gulp/tasks/html.js";
 
 // watcher for changes in files
 function watcher() {
@@ -30,12 +31,13 @@ function watcher() {
   gulp.watch(path.watch.scss, scss);
   gulp.watch(path.watch.js, js);
   gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.html, html);
 }
 
 export { svgSprive }
 
 // main tasks
-const mainTasks = gulp.parallel(copy, scss, js, images); 
+const mainTasks =gulp.parallel(copy, html, scss, js, images); 
 
 // building scenario of comleting tasks
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
