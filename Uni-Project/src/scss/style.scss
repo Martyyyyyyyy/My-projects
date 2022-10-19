@@ -1,19 +1,4 @@
-body {
-  background-color: lawngreen;
-  span {
-    color: #F2F;
-  }
-  background: url("../image/medvedyk.jpg") 0 0 no-repeat;
-}
-
-@media (max-width: 768px) {
-  span {
-    font-size: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  body {
-    background-color: grey;
-  }
+.navbar-expand-lg .navbar-nav .nav-link {
+  padding-right: var(--bs-navbar-nav-link-padding-x);
+  padding-left: var(--bs-navbar-nav-link-padding-x);
 }
