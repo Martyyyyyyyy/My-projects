@@ -1,0 +1,26 @@
+body {
+  background-color: lightgrey;
+}
+
+.form-wrapper {
+  width: 10000px;
+  padding: 0px;
+  margin: auto 0px auto 700px;
+  border-radius: 10px; 
+}
+
+.form-wrapper input {
+
+}
+
+.navbar-nav {
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0.5rem;
+  --bs-nav-link-font-weight: ;
+  --bs-nav-link-disabled-color: lightgrey;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
