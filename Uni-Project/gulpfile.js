@@ -26,6 +26,7 @@ import { images } from "./gulp/tasks/images.js";
 import { svgSprive } from "./gulp/tasks/svgSprive.js";
 import { ftp } from "./gulp/tasks/ftp.js";
 
+
 // watcher for changes in files
 function watcher() {
   gulp.watch(path.watch.files, copy);
